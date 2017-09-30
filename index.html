@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Web Audio Mixer</title>
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Web Audio API: Mixing Audio In The Browser" />
+      <meta property="og:image" content="http://www.jamesfiltness.co.uk/projects/audio-mixer/og-img.jpg" />
+      <meta property="og:description" content="A prototype Audio Mixer for Google Chrome" />
+
+      <meta property="twitter:card" content="photo" />
+      <meta property="twitter:title" content="Web Audio API: Mixing Audio In The Browser" />
+      <meta property="twitter:image:src" content="http://www.jamesfiltness.co.uk/projects/audio-mixer/og-img.jpg" />
+      <meta property="twitter:description" content="A prototype Audio Mixer for Google Chrome" />
+
+      <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+      <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+      <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+
+      <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600italic,700italic' rel='stylesheet' type='text/css' />
+      <link href='styles.css' rel='stylesheet' type='text/css' />
+    </head>
+    <body>
+      <div id="container">
+        <div id="loader"><img src="ajax-load.gif" alt="Loading..." />Loading track <span class="current">1</span> of <span class="total">0</span></div>
+        <div id="mixer" unselectable="on" onselectstart="return false;" onmousedown="return false;"></div>
+        <ul id="hints">
+        <li id="info-highshelf">
+          <span>i</span>
+          <div>
+            <h3>High-shelf Filter</h3>
+            <p>This control is set to either boost or cut the high-pitched sounds above the 10khz frequency (think cymbals and the 's' sounds in vocals). Turning the knob completely to the left attenuates the frequencies above 10khz by -20 decibels and turning it completely to the right boosts the frequencies above 10khz by +20db. Double clicking the knob sets it back to it's centre position. In the centre position the cut/boost is set to zero.</p>
+          </div>
+        </li>
+         <li id="info-peaking">
+           <span>i</span>
+          <div>
+            <h3>Peaking Filter</h3>
+            <p>The next two blue roatary knobs are used in conjunction with each other to alter the sound. The top knob allows you to set boost or cut between -20db and +20db and the bottom knob allows you to select a frequency between 100hz-10khz. This is known as a sweepable eq control. It allows you to isolate a particular part of a sound and either cut or boost it. To sweep the eq first set the top knob to 3 '0' clock to boost the signal and then turn the bottom knob (frequency) slowly to the left. You should hear different parts of the sound being accentuated. This is because the top knob is boosting the signal at whatever frequency you select withthe bottom knob. This technique is commonly used by sound engineers to find offending frequencies in a mix - for exmaple, perhaps a guitar has too much low end and is preventing the bass guitar from being heard. In this situation the engineer might boost the signal using the top knob, sweep the eq control using the bottom knob and listen for where the bassy part of the guitar is. From there the boost knob can be turned to the left so it cuts the offending frequency. Double clicking the knobs sets them back their centre position.</p>
+          </div>
+        </li>
+        <li id="info-lowshelf">
+           <span>i</span>
+          <div>
+            <h3>Low-shelf Filter</h3>
+            <p>This control allows you to affect the low-pitched parts of the sound and is the oppsite of the high-shelf filter - instead of boosting or attenuating sounds <strong>above</strong> the centre frequency the low-shelf filter boosts or cuts frequencies <strong>below</strong> the centre frequency. The knob is set to boost or cut the sound below the 90hz frequency (the thump of a mix, where the bottom end of your kick drums and bass guitar lives). Turning the knob completely to the left attenuates the sound below 90hz by -20db and turning it completely to the right boosts the sounds frequencies below 90hz by +20db. Double clicking the knob sets it back to it's centre position. In the centre position the cut/boost is set to zero.</p>
+          </div>
+        </li>
+        <li id="info-pan">
+          <span>i</span>
+          <div>
+            <h3>Pan Control</h3>
+            <p>the pan control allows you to affect whether the sound comes through the left of right channel or a mix of both. If you have two speakers and you turn the pan control completely to the left the sound will only be heard in the left speaker. In the centre position the sound will be heard equally through both speakers. At the moment this control, although correctly implemented, unfortunately doesn't seem to work with most computers soundcards :(</p>
+          </div>
+        </li>
+        <li id="info-solo">
+           <span>i</span>
+          <div>
+            <h3>Solo Control</h3>
+            <p>The solo control allows you to hear a track in isolation. Pressing it will silence all other tracks. You can solo as many tracks as you like. This is handy if you want to concentrate on particular sections of the mix. It's common to solo the bass and drum tracks at the start of a mix so they can be balanced in isolation.</p>
+          </div>
+        </li>
+        <li id="info-mute">
+           <span>i</span>
+          <div>
+            <h3>Mute control</h3>
+            <p>This control allows you to turn a track on or off. Helpful if you've got a track that you don't want in the final mix.</p>
+          </div>
+        </li>
+        <li id="info-fader">
+           <span>i</span>
+          <div>
+            <h3>Channel Fader</h3>
+            <p>This sets the overall volume of the track in the mix. This if one part of a mixer that is often abused. In the default position of 0 the sound is set at it's default volume. Moving the slider downwards reduces the sound in decibels - making the sound quieter but pushing the slider upwards boosts the sound in decibels and will begin to add unwanted noise in to the mix. The rule here is to aim to never push the fader above the 0 position, always adjust other channels faders to account for a track that is too quiet. In a professional mixing context the final loudness of the track is achieved using a combination of mixing, compression and mastering. The red channel fader controls the overall volume of the combined channels. Double clicking a fader sets it back to its default position.</p>
+          </div>
+        </li>
+      </ul>
+      </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+      <script src="mixer.js"></script>
+      <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-66439947-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html> 
