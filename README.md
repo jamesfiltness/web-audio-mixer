@@ -1,4 +1,6 @@
-# Web Audio Mixer 
+# Web Audio API Mixer 
+
+NOTE: The Web Audio API is currently only fully implemented in Google Chrome (desktop) browsers and as a result this project will not work in other browsers. 
 
 https://jamesfiltness.github.io/web-audio-mixer/
 
