@@ -1,4 +1,6 @@
-# Web Audio Mixer
+# Web Audio Mixer 
+
+https://jamesfiltness.github.io/web-audio-mixer/
 
 Audio mixer using the [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API), featuring 3 band parametric equalisation.
 
