@@ -3,7 +3,7 @@
     /**
      *
      * The focus when writing this code was on getting something done and not on beautiful code. 
-     * A rewrite using a MV* framework could be beneficial 
+     * A rewrite using React could be beneficial...
     */
     
     function loadBuffer(source, context, fn) {
