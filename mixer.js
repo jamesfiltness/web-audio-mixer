@@ -1,9 +1,11 @@
 (function() {
-
-    /* The focus when writing this code was on getting something done and not on beautiful code. 
-       A rewrite using a MV* framework could be beneficial 
+    
+    /**
+     *
+     * The focus when writing this code was on getting something done and not on beautiful code. 
+     * A rewrite using a MV* framework could be beneficial 
     */
-
+    
     function loadBuffer(source, context, fn) {
         var request = new XMLHttpRequest();
         request.open('GET', 'audio/' + source, true);
