@@ -2,7 +2,7 @@
 
 __NOTE: The Web Audio API is currently only fully implemented in Google Chrome (desktop) browsers and as a result this project will not work in other browsers.__
 
-Try your hand at mixing David Bowie's Space Oddity!
+Try your hand at mixing David Bowie's Space Oddity.
 
 https://jamesfiltness.github.io/web-audio-mixer/
 
