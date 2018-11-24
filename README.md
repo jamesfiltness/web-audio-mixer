@@ -10,7 +10,7 @@ Audio mixer built with the [Web Audio API](https://developer.mozilla.org/en-US/d
 
 To run the mixer locally first ensure you have Node installed.
 
-1. Clone the repo
+1. Clone the repo and cd to the directory
 2. Run `npm i`
 3. Run `npm start`
 4. Visit `http://localhost:3000`
