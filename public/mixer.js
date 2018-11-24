@@ -1,11 +1,11 @@
 (function() {
-    
+
     /**
      *
-     * The focus when writing this code was on getting something done and not on beautiful code. 
+     * The focus when writing this code was on getting something done and not on beautiful code.
      * A rewrite using React could be beneficial...
     */
-    
+
     function loadBuffer(source, context, fn) {
         var request = new XMLHttpRequest();
         request.open('GET', 'audio/' + source, true);
@@ -81,7 +81,7 @@
                 if ((top >= -35) && (top <= 260)) {
                     el.css('top', (move + offset) +
                         'px');
-                    //plus 35 so we have a positive range to deal with - by default the range is -35 to 250 
+                    //plus 35 so we have a positive range to deal with - by default the range is -35 to 250
                     el.trigger('fader', (move + offset +
                         35));
                 }
@@ -296,7 +296,7 @@
         this.channels = [];
         this.el = $('#mixer');
         this.ctx = ctx;
-        //hardcode duration for time being as the tracks are longer than the song is audible 
+        //hardcode duration for time being as the tracks are longer than the song is audible
         //Can't be bothered to open pro tools and trim the mp3s
         this.duration = 200;
         this.tracks = tracks;
@@ -565,7 +565,7 @@
     var sources = [
         //'Vox.mp3', 'Strings.mp3','Acous_Gtr.mp3','Bass_&_Drums.mp3'
         'Acous_Gtr.mp3', 'Strings.mp3','Bass_&_Drums.mp3', 'Mellotron.mp3','Bck_vox.mp3','Stylophone.mp3','Vox.mp3','Flute_&_Cello.mp3'
-      
+
     ];
 
     var channelTemplate = '<div class="channel"></div>';
