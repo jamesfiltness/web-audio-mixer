@@ -1,0 +1,27 @@
+{
+  "name": "web-audio-mixer",
+  "version": "1.0.0",
+  "description": "Web Audio Mixer",
+  "main": "mixer.js",
+  "scripts": {
+    "start": "node ./server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamesfiltness/web-audio-mixer.git"
+  },
+  "keywords": [
+    "web",
+    "audio",
+    "javascript"
+  ],
+  "author": "James Filtness",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jamesfiltness/web-audio-mixer/issues"
+  },
+  "homepage": "https://github.com/jamesfiltness/web-audio-mixer#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
