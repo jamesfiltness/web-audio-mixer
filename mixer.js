@@ -483,7 +483,7 @@
         });
         this.pannerControl = new RotaryKnob(this.el, 'PAN', 'panner');
         this.pannerControl.on('change', function(e, val) {
-            self.panner.pan.value = -1;
+            self.panner.pan.value = val / 31;
         });
         this.soloControl = new Button(this.el, 'solo', undefined,
             'SOLO');
@@ -536,7 +536,7 @@
 
     Channel.prototype.createChannelPanner = function(channel, track, ctx) {
         this.panner = this.ctx.createStereoPanner();
-        this.panner.pan.value = -1;
+        this.panner.pan.value = 0;
     };
 
     Channel.prototype.createChannelFader = function(channel, track, ctx) {
