@@ -553,12 +553,9 @@
     };
 
     function init() {
-        var isChrome = !!window.chrome;
-        if(!isChrome) {
-            alert('This experimental project only works on Google Chrome desktop browsers. Please try again using Google Chrome');
-        } else {
+
             new Daw();
-        }
+
     };
 
     //These sources could eventually be loaded from the server
