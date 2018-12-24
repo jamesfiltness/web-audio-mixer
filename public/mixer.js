@@ -37,7 +37,7 @@
         }
     };
 
-    function filterFactory(ctx, type, frequency, gain, q) {
+    function Filter(ctx, type, frequency, gain, q) {
         var filter = ctx.createBiquadFilter();
         filter.type = type;
         filter.frequency.value = frequency;
@@ -545,20 +545,17 @@
     };
 
     Channel.prototype.createChannelFilters = function(channel, track, ctx) {
-        this.highPassFilter = filterFactory(this.ctx, 'highpass', 80, 0);
-        this.lowShelfFilter = filterFactory(this.ctx, 'lowshelf', 90, 0);
-        this.highShelfFilter = filterFactory(this.ctx, 'highshelf',
+        this.highPassFilter = Filter(this.ctx, 'highpass', 80, 0);
+        this.lowShelfFilter = Filter(this.ctx, 'lowshelf', 90, 0);
+        this.highShelfFilter = Filter(this.ctx, 'highshelf',
             10000, 0);
-        this.midFilter = filterFactory(this.ctx, 'peaking', 10000, 0);
+        this.midFilter = Filter(this.ctx, 'peaking', 10000, 0);
     };
 
     function init() {
-        var isChrome = !!window.chrome;
-        if(!isChrome) {
-            alert('This experimental project only works on Google Chrome desktop browsers. Please try again using Google Chrome');
-        } else {
+
             new Daw();
-        }
+
     };
 
     //These sources could eventually be loaded from the server

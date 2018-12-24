@@ -1,7 +1,5 @@
 # Web Audio API Mixer
 
-__NOTE: The Web Audio API is currently only fully implemented in Google Chrome (desktop) browsers and as a result this project will not work in other browsers.__
-
 Try your hand at mixing David Bowie's Space Oddity.
 
 https://jamesfiltness.github.io/web-audio-mixer/
@@ -15,6 +13,6 @@ To run the mixer locally first ensure you have Node installed.
 3. Run `npm start`
 4. Visit `http://localhost:3000`
 
-Please be patient while the audio files load!
+This project has only been tested with Chrome and Firefox. Please be patient while the audio files load!
 
 ![Web Audio Mixer](/screenshot.png)
