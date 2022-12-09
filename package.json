@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/jamesfiltness/web-audio-mixer#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.17.3"
   }
 }
